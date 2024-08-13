@@ -16,19 +16,13 @@ var ac = {
   },
 
   turnOn: function () {
-    if (this.power == true) {
-      return "On";
-    } else {
-      return "Off";
-    }
+    this.power = true;
+    return "On";
   },
 
   turnOff: function () {
-    if (this.power == false) {
-      return "On";
-    } else {
-      return "Off";
-    }
+    this.power = false;
+    return "off";
   },
 };
 
@@ -37,3 +31,4 @@ console.log(`Rp.${ac.taxCounter()}`);
 console.log(`Rp.${ac.totalPrice()}`);
 console.log(`${ac.turnOn()}`);
 console.log(`${ac.turnOff()}`);
+console.log(ac.power);
