@@ -5,6 +5,7 @@ var ac = {
   merk: "daikin",
   price: 7000000,
   power: false,
+  temperature: 16,
   getPriceAfterDiscount: function () {
     return this.price - this.price * disc;
   },
