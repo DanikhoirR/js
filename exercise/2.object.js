@@ -10,8 +10,8 @@ var siswa = {
   getPresentToAchievementPath: function () {
     if (this.getAverageScore() >= 85) {
       return "85% - 90% masuk ptn favorit";
-    } else if (this.getAverageScore() >= 50) {
-      return "70% - 65% masuk ptn favorit";
+    } else if (this.getAverageScore() >= 70) {
+      return "70% - 80% masuk ptn favorit";
     } else {
       return "50% masuk ptn favorit";
     }
