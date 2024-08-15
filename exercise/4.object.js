@@ -4,6 +4,7 @@ var smartWatch = {
   pulse: 60,
   temperature: 34,
   footstep: 1270,
+  date: (d = new Date()),
   getParameterTime: function () {
     if (this.time >= 5 && this.time <= 10) {
       return "Morning";
@@ -37,24 +38,21 @@ var smartWatch = {
       return "tidak teridentifikasi";
     }
   },
-  getDateNow: function () {
-    return (d = new Date());
+  currentDate: function () {
+    let dd = this.date.getDate();
+    let mm = this.date.getMonth();
+    let yyyy = this.date.getFullYear();
+    return (this.date = `${dd}/${mm}/${yyyy}`);
   },
-  getCountingStep: function () {
-    if (this.footstep >= 1260 && this.footstep <= 1510) {
-      return "1 km";
-    } else if (this.footstep >= 2520 && this.footstep <= 3020) {
-      return "2 km";
-    } else if (this.footstep > 3020) {
-      return " > 3km";
-    } else {
-      return "Dibawah 1 km";
-    }
+  converterStepToKm: function () {
+    let convToM = this.footstep * 0.76;
+    let convToKm = convToM / 1000;
+    return convToKm;
   },
 };
 
 console.log(smartWatch.getParameterTime());
 console.log(smartWatch.getCountingPulse());
 console.log(smartWatch.getParameterTemperature());
-console.log(smartWatch.getDateNow());
-console.log(smartWatch.getCountingStep());
+console.log(smartWatch.currentDate());
+console.log(smartWatch.converterStepToKm());
